@@ -54,4 +54,40 @@ public class ArrayQuadrantUtil {
     	
         return ret ;
     }
+    
+    
+    //Long
+    
+    public long[] getIntColumnValues(int column) {
+    	int index = 0;
+    	long[] ret = new long[longData.length];
+    	
+    	for(int j = column;j<longData.length;j++){
+			ret[index++] = longData[j][column];
+		}
+    	return ret;
+    }
+
+    public long[] getIntRowValues(int row) {
+    	int index = 0;
+    	long[] ret = new long[longData.length];
+    	for(int j = row;j<longData.length;j++){
+			ret[index++] = longData[row][j];
+		}
+    	return ret;
+    }
+    public long[] getIntQuadrantValues(int row, int column) {
+        	int size = longData.length/2;
+    	long[] ret = new long[longData.length];
+    	int index = 0;
+    	
+    	
+    	for(int i =row;i<size;i++){
+    		for(int j = column;j<size;j++){
+    			ret[index++] = longData[i][j];
+    		}
+    	}
+    	
+        return ret ;
+    }
 }

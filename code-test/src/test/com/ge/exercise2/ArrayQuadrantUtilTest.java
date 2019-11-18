@@ -31,5 +31,29 @@ public class ArrayQuadrantUtilTest {
         
         char[] expectedRowResult = {'a', 'b', 'c', 'd'};
         assertArrayEquals(expectedRowResult, util.getRowValues(0));
+        
+        
+        long[][] intData = {
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12},
+                {13, 14, 15, 16}
+        };
+
+        ArrayQuadrantUtil intutil = new ArrayQuadrantUtil(intData);
+        Assume.assumeNotNull(intutil.getIntQuadrantValues(0, 0));
+        Assume.assumeNotNull(intutil.getIntColumnValues(0));
+        Assume.assumeNotNull(intutil.getIntRowValues(0));
+        
+        
+
+        long[] intexpectedResult = {1, 2, 5, 6};
+        assertArrayEquals(intexpectedResult, intutil.getIntQuadrantValues(0, 0));
+        
+        long[] intexpectedResult1 = {1, 5, 9, 13};
+        assertArrayEquals(intexpectedResult1, intutil.getIntColumnValues(0));
+        
+        long[] intexpectedResult2 = {1, 2, 3, 4};
+        assertArrayEquals(intexpectedResult2, intutil.getIntRowValues(0));
     }
 }
